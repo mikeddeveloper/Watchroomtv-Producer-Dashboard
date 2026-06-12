@@ -8,7 +8,7 @@ import type {
 import { TOKEN_KEY, USER_KEY } from '../constants/storageKeys';
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:3000/api/v1';
-const IS_DEV = import.meta.env.DEV;
+const IS_DEV = import.meta.env.DEV || import.meta.env.VITE_USE_MOCK === 'true';
 
 function delay(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));

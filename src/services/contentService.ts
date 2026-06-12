@@ -3,7 +3,7 @@ import { TOKEN_KEY } from '../constants/storageKeys';
 import { MOCK_CONTENT_ANALYTICS, MOCK_CONTENT_LIST } from '../mocks/mockContent';
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:3000/api/v1';
-const IS_DEV = import.meta.env.DEV;
+const IS_DEV = import.meta.env.DEV || import.meta.env.VITE_USE_MOCK === 'true';
 
 function getAuthHeaders(): Record<string, string> {
   const token = localStorage.getItem(TOKEN_KEY) ?? '';
