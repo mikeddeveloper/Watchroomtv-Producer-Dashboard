@@ -20,7 +20,7 @@ export function MetricCard({ card, index }: MetricCardProps) {
       {/* Top row */}
       <div className="flex items-start justify-between">
         <div>
-          <p className="mb-2 text-[11px] uppercase tracking-widest dark:text-[#4a6070] light:text-[#64748b]">
+          <p className="mb-2 text-xs dark:text-[#4a6070] light:text-[#64748b]">
             {card.label}
           </p>
           <p className="text-2xl font-medium dark:text-white light:text-[#0f172a]">{card.value}</p>

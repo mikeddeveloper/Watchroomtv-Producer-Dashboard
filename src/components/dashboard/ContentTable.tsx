@@ -90,9 +90,9 @@ function ContentTableRow({ item, index, onNavigate }: ContentTableRowProps) {
 
       <td role="cell" className="px-2 py-4">
         <span
-          className={`rounded-full px-2.5 py-1 text-[10px] uppercase tracking-wider ${statusStyles[item.status]}`}
+          className={`rounded-full px-2.5 py-1 text-xs ${statusStyles[item.status]}`}
         >
-          {item.status}
+          {item.status.charAt(0).toUpperCase() + item.status.slice(1)}
         </span>
       </td>
     </tr>
@@ -180,7 +180,7 @@ export function ContentTable() {
                   <th
                     key={col}
                     role="columnheader"
-                    className="pb-3 pl-2 pr-2 pt-0 text-left text-[11px] uppercase tracking-widest dark:text-[#4a6070] light:text-[#64748b]"
+                    className="pb-3 pl-2 pr-2 pt-0 text-left text-xs font-medium dark:text-[#4a6070] light:text-[#64748b]"
                   >
                     {col}
                   </th>

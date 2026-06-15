@@ -78,7 +78,7 @@ export function PasswordCard({
         <div className="mb-4">
           <label
             htmlFor="pw-current"
-            className="mb-2 block text-[11px] uppercase tracking-widest dark:text-[#4a6070] light:text-[#64748b]"
+            className="mb-2 block text-sm font-medium dark:text-[#4a6070] light:text-[#64748b]"
           >
             Current Password
           </label>
@@ -107,7 +107,7 @@ export function PasswordCard({
         <div className="mb-2">
           <label
             htmlFor="pw-new"
-            className="mb-2 block text-[11px] uppercase tracking-widest dark:text-[#4a6070] light:text-[#64748b]"
+            className="mb-2 block text-sm font-medium dark:text-[#4a6070] light:text-[#64748b]"
           >
             New Password
           </label>
@@ -157,7 +157,7 @@ export function PasswordCard({
         <div className="mb-5">
           <label
             htmlFor="pw-confirm"
-            className="mb-2 block text-[11px] uppercase tracking-widest dark:text-[#4a6070] light:text-[#64748b]"
+            className="mb-2 block text-sm font-medium dark:text-[#4a6070] light:text-[#64748b]"
           >
             Confirm New Password
           </label>

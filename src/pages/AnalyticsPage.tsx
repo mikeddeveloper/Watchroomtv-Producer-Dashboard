@@ -8,6 +8,7 @@ import { RetentionChart } from '../components/analytics/RetentionChart';
 import { WatchDurationChart } from '../components/analytics/WatchDurationChart';
 import { DropOffChart } from '../components/analytics/DropOffChart';
 import { EngagementMetrics } from '../components/analytics/EngagementMetrics';
+import { EngagementPieChart } from '../components/analytics/EngagementPieChart';
 import { useContentAnalytics } from '../hooks/useContentAnalytics';
 import { formatNaira, formatViews } from '../utils/formatters';
 
@@ -94,7 +95,7 @@ export default function AnalyticsPage() {
             />
             <div className="flex items-center gap-3">
               <h1 className="text-xl font-medium dark:text-white light:text-[#0f172a]">{analytics.title}</h1>
-              <span className="rounded-full border dark:border-[#1a2830] light:border-[#e2e8f0] dark:bg-[#0e1519] light:bg-[#f8fafc] px-2.5 py-1 text-[10px] uppercase tracking-wider dark:text-[#4a6070] light:text-[#64748b]">
+              <span className="rounded-full border dark:border-[#1a2830] light:border-[#e2e8f0] dark:bg-[#0e1519] light:bg-[#f8fafc] px-2.5 py-1 text-xs dark:text-[#4a6070] light:text-[#64748b]">
                 {analytics.genre}
               </span>
             </div>
@@ -138,7 +139,10 @@ export default function AnalyticsPage() {
           </div>
 
           {/* Engagement */}
-          <EngagementMetrics engagement={analytics.engagement} />
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <EngagementMetrics engagement={analytics.engagement} />
+            <EngagementPieChart engagement={analytics.engagement} />
+          </div>
         </>
       )}
     </DashboardLayout>

@@ -32,7 +32,7 @@ export function EngagementMetrics({ engagement }: EngagementMetricsProps) {
               <Icon size={14} className="text-[#00b4dc]" aria-hidden="true" />
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-widest dark:text-[#4a6070] light:text-[#64748b]">{label}</p>
+              <p className="text-xs dark:text-[#4a6070] light:text-[#64748b]">{label}</p>
               <p className="text-sm font-medium dark:text-white light:text-[#0f172a]">{formatViews(engagement[key])}</p>
             </div>
           </div>

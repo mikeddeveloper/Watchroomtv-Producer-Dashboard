@@ -93,33 +93,18 @@ export default function ForgotPasswordPage() {
   const stepIndex = STEP_ORDER.indexOf(step);
 
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden dark:bg-[#080c10] light:bg-[#f0f4f8] px-4 py-12">
-      {/* Background gradients */}
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-125"
-        style={{ background: 'radial-gradient(ellipse at top center, rgba(0,180,220,0.08) 0%, transparent 70%)' }}
-      />
-      <div
-        className="pointer-events-none absolute bottom-0 left-0 h-64 w-64"
-        style={{ background: 'radial-gradient(circle at bottom left, rgba(0,180,220,0.04) 0%, transparent 70%)' }}
-      />
+    <div className="flex min-h-screen flex-col items-center justify-center dark:bg-[#080c10] light:bg-[#f0f4f8] px-4 py-12">
 
       {/* Content */}
-      <div className="relative z-10 flex w-full max-w-100 flex-col gap-8">
+      <div className="w-full max-w-sm">
 
         {/* Logo */}
-        <div data-aos="fade-down" data-aos-duration="700" className="flex flex-col items-center gap-3">
-          <img src={watchroomLogo} alt="WatchRoomTV" className="h-16 w-16 object-contain" />
-          <p className="text-[22px] font-medium tracking-tight">
-            <span className="dark:text-white light:text-[#0f172a]">Watch</span>
-            <span className="text-[#00b4dc]">Room</span>
-            <span className="dark:text-white light:text-[#0f172a]">TV</span>
-          </p>
-          <p className="text-[10px] uppercase tracking-[0.3em] text-[#3a5060]">Producer Portal</p>
+        <div data-aos="fade-down" className="mb-8 flex justify-center">
+          <img src={watchroomLogo} alt="WatchRoomTV" className="h-11 w-11 object-contain" />
         </div>
 
         {/* Step progress */}
-        <div data-aos="fade-up" data-aos-delay="100" className="flex justify-center gap-2">
+        <div data-aos="fade-up" data-aos-delay="60" className="mb-6 flex justify-center gap-2">
           {STEP_ORDER.map((_step, i) => (
             <div
               key={i}
@@ -135,8 +120,8 @@ export default function ForgotPasswordPage() {
         {/* Form card */}
         <div
           data-aos="fade-up"
-          data-aos-delay="150"
-          className="rounded-2xl border dark:border-[#1a2830] light:border-[#e2e8f0] dark:bg-[#0e1519] light:bg-white px-7 py-8"
+          data-aos-delay="100"
+          className="rounded-xl border dark:border-[#1a2830] light:border-[#e2e8f0] dark:bg-[#0e1519] light:bg-white px-7 py-8"
         >
           {step === 'email' && (
             <StepEnterEmail

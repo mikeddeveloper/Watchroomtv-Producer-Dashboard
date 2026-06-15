@@ -37,7 +37,7 @@ export function LoginForm({ onSubmit, onForgotPassword, isLoading, error }: Logi
       <div data-aos="fade-up" data-aos-delay="100" className="mb-4">
         <label
           htmlFor="email"
-          className="mb-2 block text-[11px] uppercase tracking-widest dark:text-[#4a6070] light:text-[#64748b]"
+          className="mb-2 block text-sm font-medium dark:text-[#4a6070] light:text-[#64748b]"
         >
           Email address
         </label>
@@ -55,7 +55,7 @@ export function LoginForm({ onSubmit, onForgotPassword, isLoading, error }: Logi
       <div data-aos="fade-up" data-aos-delay="200" className="mb-2">
         <label
           htmlFor="password"
-          className="mb-2 block text-[11px] uppercase tracking-widest dark:text-[#4a6070] light:text-[#64748b]"
+          className="mb-2 block text-sm font-medium dark:text-[#4a6070] light:text-[#64748b]"
         >
           Password
         </label>

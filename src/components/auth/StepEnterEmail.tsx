@@ -43,7 +43,7 @@ export function StepEnterEmail({ onNext, isLoading, error }: StepEnterEmailProps
         <div className="mb-5">
           <label
             htmlFor="fp-email"
-            className="mb-2 block text-[11px] uppercase tracking-widest dark:text-[#4a6070] light:text-[#64748b]"
+            className="mb-2 block text-sm font-medium dark:text-[#4a6070] light:text-[#64748b]"
           >
             Email address
           </label>

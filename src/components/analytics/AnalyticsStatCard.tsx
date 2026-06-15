@@ -20,7 +20,7 @@ export function AnalyticsStatCard({ label, value, icon, index }: AnalyticsStatCa
         <Icon size={16} className="text-[#00b4dc]" aria-hidden="true" />
       </div>
       <div>
-        <p className="text-[11px] uppercase tracking-widest dark:text-[#4a6070] light:text-[#64748b]">{label}</p>
+        <p className="text-xs dark:text-[#4a6070] light:text-[#64748b]">{label}</p>
         <p className="text-lg font-medium dark:text-white light:text-[#0f172a]">{value}</p>
       </div>
     </div>
