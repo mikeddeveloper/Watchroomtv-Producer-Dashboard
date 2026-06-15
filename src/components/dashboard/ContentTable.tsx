@@ -14,11 +14,10 @@ import {
 
 interface ContentTableRowProps {
   item: ContentItem;
-  index: number;
   onNavigate: (id: string) => void;
 }
 
-function ContentTableRow({ item, index, onNavigate }: ContentTableRowProps) {
+function ContentTableRow({ item, onNavigate }: ContentTableRowProps) {
   const [imgError, setImgError] = useState(false);
 
   const completionColor =
@@ -40,8 +39,6 @@ function ContentTableRow({ item, index, onNavigate }: ContentTableRowProps) {
   return (
     <tr
       role="row"
-      data-aos="fade-up"
-      data-aos-delay={`${index * 60}`}
       onClick={() => { onNavigate(item.id); }}
       className="cursor-pointer border-b dark:border-[#1a2830]/50 light:border-[#e2e8f0] transition-all duration-200 dark:hover:bg-[#0e1519] light:hover:bg-[#f8fafc]"
     >
@@ -149,12 +146,12 @@ export function ContentTable() {
     <section>
       {/* Section header */}
       <div className="mb-6 flex items-center justify-between">
-        <div data-aos="fade-right">
+        <div>
           <h2 className="text-base font-medium dark:text-white light:text-[#0f172a]">Content Performance</h2>
           <p className="text-sm dark:text-[#4a6070] light:text-[#64748b]">All your uploaded content</p>
         </div>
 
-        <div data-aos="fade-left" className="relative">
+        <div className="relative">
           <Search
             size={14}
             className="absolute left-3 top-1/2 -translate-y-1/2 dark:text-[#4a6070] light:text-[#64748b]"
@@ -217,11 +214,10 @@ export function ContentTable() {
 
             {!isLoading &&
               !error &&
-              filteredItems.map((item, i) => (
+              filteredItems.map((item) => (
                 <ContentTableRow
                   key={item.id}
                   item={item}
-                  index={i}
                   onNavigate={handleNavigate}
                 />
               ))}

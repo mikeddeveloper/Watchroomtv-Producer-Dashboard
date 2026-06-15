@@ -26,7 +26,6 @@ export function DropOffChart({ data }: DropOffChartProps) {
 
   return (
     <div
-      data-aos="fade-up"
       aria-label="Drop-off analytics chart"
       className="rounded-2xl border dark:border-[#1a2830] light:border-[#e2e8f0] dark:bg-[#0e1519] light:bg-white p-5"
     >

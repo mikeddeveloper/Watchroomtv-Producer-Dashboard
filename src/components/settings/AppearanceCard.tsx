@@ -7,8 +7,6 @@ export function AppearanceCard() {
 
   return (
     <div
-      data-aos="fade-up"
-      data-aos-delay="100"
       className="rounded-2xl border dark:border-[#1a2830] light:border-[#e2e8f0] dark:bg-[#0e1519] light:bg-white p-5"
     >
       <h3 className="mb-1 text-sm font-medium dark:text-white light:text-[#0f172a]">Appearance</h3>

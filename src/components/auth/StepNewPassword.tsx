@@ -52,7 +52,7 @@ export function StepNewPassword({ onNext, isLoading, error }: StepNewPasswordPro
   const displayError = validationError ?? error;
 
   return (
-    <div data-aos="fade-up">
+    <div>
       <div className="mb-4 flex justify-center">
         <KeyRound size={32} className="text-[#00b4dc]" aria-hidden="true" />
       </div>

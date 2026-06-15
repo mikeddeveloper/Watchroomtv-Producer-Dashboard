@@ -43,8 +43,6 @@ export function TopNav() {
     <>
       <nav
         aria-label="Main navigation"
-        data-aos="fade-down"
-        data-aos-duration="600"
         className="fixed left-0 right-0 top-0 z-50 h-16 border-b dark:border-[#1a2830] light:border-[#e2e8f0] dark:bg-[#080c10]/95 light:bg-white/95 backdrop-blur-sm"
       >
         <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-5">

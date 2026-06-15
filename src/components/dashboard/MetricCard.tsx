@@ -4,17 +4,14 @@ import type { MetricCard as MetricCardData } from '../../types/dashboard.types';
 
 interface MetricCardProps {
   card: MetricCardData;
-  index: number;
 }
 
-export function MetricCard({ card, index }: MetricCardProps) {
+export function MetricCard({ card }: MetricCardProps) {
   const Icon = card.icon;
   const chartData = card.sparkline.map((v, i) => ({ v, i }));
 
   return (
     <div
-      data-aos="fade-up"
-      data-aos-delay={`${index * 80}`}
       className="flex cursor-default flex-col gap-4 rounded-2xl border dark:border-[#1a2830] light:border-[#e2e8f0] dark:bg-[#0e1519] light:bg-white p-5 transition-all duration-300 hover:border-[#00b4dc]/20"
     >
       {/* Top row */}

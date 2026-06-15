@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AOS from 'aos';
 import { StepEnterEmail } from '../components/auth/StepEnterEmail';
 import { StepVerifyOTP } from '../components/auth/StepVerifyOTP';
 import { StepNewPassword } from '../components/auth/StepNewPassword';
@@ -20,14 +19,6 @@ export default function ForgotPasswordPage() {
   const [otp, setOtp] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    AOS.init({ duration: 600, once: true, easing: 'ease-out-cubic' });
-  }, []);
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [step]);
 
   async function handleSendOTP(emailInput: string): Promise<void> {
     setIsLoading(true);
@@ -94,17 +85,15 @@ export default function ForgotPasswordPage() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center dark:bg-[#080c10] light:bg-[#f0f4f8] px-4 py-12">
-
-      {/* Content */}
       <div className="w-full max-w-sm">
 
         {/* Logo */}
-        <div data-aos="fade-down" className="mb-8 flex justify-center">
+        <div className="mb-8 flex justify-center">
           <img src={watchroomLogo} alt="WatchRoomTV" className="h-11 w-11 object-contain" />
         </div>
 
         {/* Step progress */}
-        <div data-aos="fade-up" data-aos-delay="60" className="mb-6 flex justify-center gap-2">
+        <div className="mb-6 flex justify-center gap-2">
           {STEP_ORDER.map((_step, i) => (
             <div
               key={i}
@@ -118,17 +107,9 @@ export default function ForgotPasswordPage() {
         </div>
 
         {/* Form card */}
-        <div
-          data-aos="fade-up"
-          data-aos-delay="100"
-          className="rounded-xl border dark:border-[#1a2830] light:border-[#e2e8f0] dark:bg-[#0e1519] light:bg-white px-7 py-8"
-        >
+        <div className="rounded-xl border dark:border-[#1a2830] light:border-[#e2e8f0] dark:bg-[#0e1519] light:bg-white px-7 py-8">
           {step === 'email' && (
-            <StepEnterEmail
-              onNext={handleSendOTP}
-              isLoading={isLoading}
-              error={error}
-            />
+            <StepEnterEmail onNext={handleSendOTP} isLoading={isLoading} error={error} />
           )}
           {step === 'otp' && (
             <StepVerifyOTP
@@ -140,11 +121,7 @@ export default function ForgotPasswordPage() {
             />
           )}
           {step === 'newPassword' && (
-            <StepNewPassword
-              onNext={handleResetPassword}
-              isLoading={isLoading}
-              error={error}
-            />
+            <StepNewPassword onNext={handleResetPassword} isLoading={isLoading} error={error} />
           )}
           {step === 'success' && (
             <StepSuccess onGoToLogin={handleGoToLogin} />

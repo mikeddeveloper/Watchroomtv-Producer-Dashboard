@@ -14,7 +14,7 @@ export function StepEnterEmail({ onNext, isLoading, error }: StepEnterEmailProps
   const navigate = useNavigate();
 
   return (
-    <div data-aos="fade-up">
+    <div>
       <div className="mb-4 flex justify-center">
         <Mail size={32} className="text-[#00b4dc]" aria-hidden="true" />
       </div>

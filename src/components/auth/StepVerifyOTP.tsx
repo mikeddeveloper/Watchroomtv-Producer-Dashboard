@@ -55,7 +55,7 @@ export function StepVerifyOTP({ email, onNext, onResend, isLoading, error }: Ste
   const otpValue = otp.join('');
 
   return (
-    <div data-aos="fade-up">
+    <div>
       <div className="mb-4 flex justify-center">
         <ShieldCheck size={32} className="text-[#00b4dc]" aria-hidden="true" />
       </div>

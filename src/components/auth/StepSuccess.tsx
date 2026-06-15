@@ -21,7 +21,7 @@ export function StepSuccess({ onGoToLogin }: StepSuccessProps) {
   }, []);
 
   return (
-    <div data-aos="zoom-in" data-aos-duration="500" className="text-center">
+    <div className="text-center">
       <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full border-2 border-[#00b4dc]/30">
         <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#00b4dc]/10">
           <CheckCircle2 size={28} className="text-[#00b4dc]" aria-hidden="true" />

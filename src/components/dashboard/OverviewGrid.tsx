@@ -17,12 +17,12 @@ export function OverviewGrid() {
 
       {/* Section header */}
       <div className="mb-6 flex items-center justify-between">
-        <div data-aos="fade-right">
+        <div>
           <h2 className="text-base font-medium dark:text-white light:text-[#0f172a]">Overview</h2>
           <p className="text-sm dark:text-[#4a6070] light:text-[#64748b]">Your content performance at a glance</p>
         </div>
 
-        <div data-aos="fade-left" className="flex items-center gap-1">
+        <div className="flex items-center gap-1">
           {PERIODS.map((period) => (
             <button
               key={period}
@@ -53,8 +53,8 @@ export function OverviewGrid() {
           </div>
         )}
 
-        {!isLoading && !error && cards.map((card, i) => (
-          <MetricCard key={card.id} card={card} index={i} />
+        {!isLoading && !error && cards.map((card) => (
+          <MetricCard key={card.id} card={card} />
         ))}
       </div>
 

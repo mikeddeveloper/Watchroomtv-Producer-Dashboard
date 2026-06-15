@@ -62,7 +62,6 @@ export function PasswordCard({
 
   return (
     <div
-      data-aos="fade-up"
       className="rounded-2xl border dark:border-[#1a2830] light:border-[#e2e8f0] dark:bg-[#0e1519] light:bg-white p-6"
     >
       <p className="mb-5 text-sm font-medium dark:text-white light:text-[#0f172a]">Change Password</p>

@@ -26,7 +26,6 @@ export function LoginForm({ onSubmit, onForgotPassword, isLoading, error }: Logi
       {error && (
         <div
           role="alert"
-          data-aos="fade-down"
           className="mb-5 flex items-center gap-2 rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-400"
         >
           <AlertCircle size={16} aria-hidden="true" className="shrink-0" />
@@ -34,7 +33,7 @@ export function LoginForm({ onSubmit, onForgotPassword, isLoading, error }: Logi
         </div>
       )}
 
-      <div data-aos="fade-up" data-aos-delay="100" className="mb-4">
+      <div className="mb-4">
         <label
           htmlFor="email"
           className="mb-2 block text-sm font-medium dark:text-[#4a6070] light:text-[#64748b]"
@@ -52,7 +51,7 @@ export function LoginForm({ onSubmit, onForgotPassword, isLoading, error }: Logi
         />
       </div>
 
-      <div data-aos="fade-up" data-aos-delay="200" className="mb-2">
+      <div className="mb-2">
         <label
           htmlFor="password"
           className="mb-2 block text-sm font-medium dark:text-[#4a6070] light:text-[#64748b]"
@@ -92,7 +91,7 @@ export function LoginForm({ onSubmit, onForgotPassword, isLoading, error }: Logi
         </button>
       </div>
 
-      <div data-aos="fade-up" data-aos-delay="300">
+      <div>
         <button
           type="submit"
           disabled={isLoading || !email || !password}

@@ -2,7 +2,6 @@ import {
   Bar,
   BarChart,
   CartesianGrid,
-  Cell,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -27,9 +26,13 @@ export function WatchDurationChart({ data }: WatchDurationChartProps) {
     : { backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: 8 };
   const labelStyle = { color: tickFill };
 
+  const chartData = data.map((d) => ({
+    ...d,
+    fill: d.viewers === maxViewers ? '#00b4dc' : 'rgba(0,180,220,0.4)',
+  }));
+
   return (
     <div
-      data-aos="fade-up"
       aria-label="Watch duration distribution chart"
       className="rounded-2xl border dark:border-[#1a2830] light:border-[#e2e8f0] dark:bg-[#0e1519] light:bg-white p-5"
     >
@@ -38,7 +41,7 @@ export function WatchDurationChart({ data }: WatchDurationChartProps) {
         How long viewers are watching your content
       </p>
       <ResponsiveContainer width="100%" height={240}>
-        <BarChart data={data} margin={{ top: 4, right: 4, bottom: 4, left: 4 }}>
+        <BarChart data={chartData} margin={{ top: 4, right: 4, bottom: 4, left: 4 }}>
           <CartesianGrid strokeDasharray="3 3" stroke={gridStroke} />
           <XAxis
             dataKey="label"
@@ -57,14 +60,7 @@ export function WatchDurationChart({ data }: WatchDurationChartProps) {
             labelStyle={labelStyle}
             itemStyle={{ color: '#00b4dc' }}
           />
-          <Bar dataKey="viewers" radius={[4, 4, 0, 0] as [number, number, number, number]}>
-            {data.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={entry.viewers === maxViewers ? '#00b4dc' : 'rgba(0,180,220,0.4)'}
-              />
-            ))}
-          </Bar>
+          <Bar dataKey="viewers" radius={[4, 4, 0, 0] as [number, number, number, number]} />
         </BarChart>
       </ResponsiveContainer>
     </div>

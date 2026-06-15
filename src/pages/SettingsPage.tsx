@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AOS from 'aos';
 import { Settings } from 'lucide-react';
 import { DashboardLayout } from '../components/layout/DashboardLayout';
 import { ProfileCard } from '../components/settings/ProfileCard';
@@ -22,10 +21,6 @@ export default function SettingsPage() {
   } = useSettings();
 
   useEffect(() => {
-    AOS.init({ duration: 600, once: true, easing: 'ease-out-cubic' });
-  }, []);
-
-  useEffect(() => {
     if (!user) navigate('/login');
   }, [user, navigate]);
 
@@ -34,7 +29,7 @@ export default function SettingsPage() {
   return (
     <DashboardLayout>
       {/* Page header */}
-      <div data-aos="fade-down" className="mb-8 flex items-center gap-3">
+      <div className="mb-8 flex items-center gap-3">
         <Settings size={22} className="text-[#00b4dc]" aria-hidden="true" />
         <div>
           <h1 className="text-xl font-medium dark:text-white light:text-[#0f172a]">Settings</h1>
@@ -71,8 +66,6 @@ export default function SettingsPage() {
 
           {/* Account info card */}
           <div
-            data-aos="fade-up"
-            data-aos-delay="200"
             className="rounded-2xl border dark:border-[#1a2830] light:border-[#e2e8f0] dark:bg-[#0e1519] light:bg-white p-5"
           >
             <p className="mb-4 text-sm font-medium dark:text-white light:text-[#0f172a]">

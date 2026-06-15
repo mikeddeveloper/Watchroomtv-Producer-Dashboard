@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import AOS from 'aos';
 import { Activity, AlertCircle, ArrowLeft, DollarSign, Eye, Star } from 'lucide-react';
 import { DashboardLayout } from '../components/layout/DashboardLayout';
 import { AnalyticsStatCard } from '../components/analytics/AnalyticsStatCard';
@@ -16,10 +15,6 @@ export default function AnalyticsPage() {
   const navigate = useNavigate();
   const { contentId } = useParams<{ contentId: string }>();
   const { analytics, isLoading, error } = useContentAnalytics(contentId ?? '');
-
-  useEffect(() => {
-    AOS.init({ duration: 600, once: true, easing: 'ease-out-cubic' });
-  }, []);
 
   useEffect(() => {
     if (!contentId) navigate('/dashboard');
@@ -87,7 +82,7 @@ export default function AnalyticsPage() {
       {!isLoading && !error && analytics && (
         <>
           {/* Page header */}
-          <div data-aos="fade-up" className="mb-8 flex items-center gap-4">
+          <div className="mb-8 flex items-center gap-4">
             <img
               src={analytics.thumbnail}
               alt={analytics.title}
@@ -103,30 +98,10 @@ export default function AnalyticsPage() {
 
           {/* Stat cards */}
           <div className="mb-8 grid grid-cols-2 gap-4 md:grid-cols-4">
-            <AnalyticsStatCard
-              label="Total Views"
-              value={formatViews(analytics.totalViews)}
-              icon={Eye}
-              index={0}
-            />
-            <AnalyticsStatCard
-              label="Revenue"
-              value={formatNaira(analytics.revenueNaira)}
-              icon={DollarSign}
-              index={1}
-            />
-            <AnalyticsStatCard
-              label="Avg Rating"
-              value={`${analytics.engagement.avgRating}/5`}
-              icon={Star}
-              index={2}
-            />
-            <AnalyticsStatCard
-              label="Engagement"
-              value={formatViews(totalInteractions)}
-              icon={Activity}
-              index={3}
-            />
+            <AnalyticsStatCard label="Total Views" value={formatViews(analytics.totalViews)} icon={Eye} />
+            <AnalyticsStatCard label="Revenue" value={formatNaira(analytics.revenueNaira)} icon={DollarSign} />
+            <AnalyticsStatCard label="Avg Rating" value={`${analytics.engagement.avgRating}/5`} icon={Star} />
+            <AnalyticsStatCard label="Engagement" value={formatViews(totalInteractions)} icon={Activity} />
           </div>
 
           {/* Charts */}

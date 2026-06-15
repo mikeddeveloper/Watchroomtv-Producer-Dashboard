@@ -40,7 +40,7 @@ export function ProfileCard({
       className="rounded-2xl border dark:border-[#1a2830] light:border-[#e2e8f0] dark:bg-[#0e1519] light:bg-white p-6"
     >
       {/* Avatar section */}
-      <div data-aos="fade-up" className="mb-8 flex flex-col items-center gap-3">
+      <div className="mb-8 flex flex-col items-center gap-3">
         <div className="relative h-24 w-24">
           {user.profilePicture ? (
             <img
@@ -78,7 +78,7 @@ export function ProfileCard({
       </div>
 
       {/* Username form */}
-      <div data-aos="fade-up" data-aos-delay="100">
+      <div>
         <p className="mb-4 text-sm font-medium dark:text-white light:text-[#0f172a]">Update Username</p>
         <form
           onSubmit={(e) => {
