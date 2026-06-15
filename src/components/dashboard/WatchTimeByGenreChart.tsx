@@ -1,11 +1,11 @@
-import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
+import { Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { useTheme } from '../../context/ThemeContext';
 
 const DATA = [
-  { name: 'Documentary', value: 2_460_000, color: '#00b4dc' },
-  { name: 'Drama',       value:   980_000, color: '#7c3aed' },
-  { name: 'Reality',     value:   540_000, color: '#f59e0b' },
-  { name: 'Music',       value:   390_000, color: '#10b981' },
+  { name: 'Documentary', value: 2_460_000, fill: '#00b4dc' },
+  { name: 'Drama',       value:   980_000, fill: '#7c3aed' },
+  { name: 'Reality',     value:   540_000, fill: '#f59e0b' },
+  { name: 'Music',       value:   390_000, fill: '#10b981' },
 ];
 
 const TOTAL = DATA.reduce((s, d) => s + d.value, 0);
@@ -36,7 +36,7 @@ export function WatchTimeByGenreChart() {
       </p>
 
       <div className="flex items-center gap-6">
-        <div className="h-[148px] w-[148px] shrink-0">
+        <div className="h-37 w-37 shrink-0">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
@@ -48,16 +48,12 @@ export function WatchTimeByGenreChart() {
                 dataKey="value"
                 strokeWidth={2}
                 stroke={isDark ? '#0e1519' : '#ffffff'}
-              >
-                {DATA.map((d) => (
-                  <Cell key={d.name} fill={d.color} />
-                ))}
-              </Pie>
+              />
               <Tooltip
                 contentStyle={tooltipStyle}
                 labelStyle={{ color: tickFill, fontSize: 11 }}
                 itemStyle={{ color: isDark ? '#d0e8f0' : '#1e293b' }}
-                formatter={(value: number) => [formatHours(value), 'Watch Time']}
+                formatter={(value) => [formatHours(value as number), 'Watch Time']}
               />
             </PieChart>
           </ResponsiveContainer>
@@ -67,7 +63,7 @@ export function WatchTimeByGenreChart() {
           {DATA.map((d) => (
             <li key={d.name} className="flex items-center justify-between gap-2">
               <div className="flex min-w-0 items-center gap-2">
-                <span className="h-2 w-2 shrink-0 rounded-full" style={{ backgroundColor: d.color }} />
+                <span className="h-2 w-2 shrink-0 rounded-full" style={{ backgroundColor: d.fill }} />
                 <span className="truncate text-xs dark:text-[#4a6070] light:text-[#64748b]">{d.name}</span>
               </div>
               <span className="shrink-0 tabular-nums text-xs font-medium dark:text-white light:text-[#0f172a]">
